@@ -1,0 +1,74 @@
+{
+  "name": "DevData MCP",
+  "description": "16 developer tools for AI agents: GitHub trending/search/user/repo, NPM stats/package, HackerNews, Dev.to articles, Crypto prices/gas, URL-to-markdown, DNS lookup, IP geolocation, Wikipedia search, Weather, Website status checker",
+  "version": "2.0.0",
+  "author": "zaizai-agent",
+  "license": "MIT",
+  "categories": ["developer-tools", "data-api", "github", "crypto", "reference"],
+  "tools": [
+    {
+      "name": "github_trending",
+      "description": "Get GitHub trending repositories by language and time period"
+    },
+    {
+      "name": "github_search",
+      "description": "Search GitHub repositories by keyword, topic, or description"
+    },
+    {
+      "name": "github_user",
+      "description": "Get GitHub user profile information including bio, repos, and followers"
+    },
+    {
+      "name": "github_repo",
+      "description": "Get detailed GitHub repository information including stats and languages"
+    },
+    {
+      "name": "npm_stats",
+      "description": "Get NPM package download statistics"
+    },
+    {
+      "name": "npm_package",
+      "description": "Get detailed NPM package information including version, license, dependencies"
+    },
+    {
+      "name": "hackernews_top",
+      "description": "Get Hacker News top stories"
+    },
+    {
+      "name": "devto_articles",
+      "description": "Get trending articles from Dev.to"
+    },
+    {
+      "name": "crypto_price",
+      "description": "Get cryptocurrency price from CoinGecko"
+    },
+    {
+      "name": "crypto_gas",
+      "description": "Get Ethereum gas prices"
+    },
+    {
+      "name": "url_to_markdown",
+      "description": "Convert any webpage URL to clean markdown text"
+    },
+    {
+      "name": "ip_lookup",
+      "description": "Get geolocation and network information for an IP address"
+    },
+    {
+      "name": "dns_lookup",
+      "description": "Look up DNS records for a domain"
+    },
+    {
+      "name": "website_status",
+      "description": "Check if a website is up and get response info"
+    },
+    {
+      "name": "wikipedia_search",
+      "description": "Search Wikipedia articles and get summaries"
+    },
+    {
+      "name": "weather",
+      "description": "Get current weather conditions for any city"
+    }
+  ]
+}

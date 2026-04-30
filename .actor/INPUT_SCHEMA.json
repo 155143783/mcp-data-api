@@ -1,0 +1,7 @@
+{
+  "title": "Data API MCP Server Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {},
+  "required": []
+}

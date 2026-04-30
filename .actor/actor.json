@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "name": "data-api-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server providing access to data APIs: GitHub trending, NPM stats, HackerNews, Crypto prices, and Ethereum gas prices",
+  "usesStandbyMode": true,
+  "minMemoryMbytes": 512,
+  "maxMemoryMbytes": 4096,
+  "environmentVariables": {}
+}

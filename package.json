@@ -1,0 +1,78 @@
+{
+  "name": "mcp-data-api",
+  "version": "2.0.0",
+  "description": "MCP server with 16 developer tools: GitHub (trending/search/user/repo), NPM (stats/package), HackerNews, Dev.to, Crypto, DNS, IP lookup, URL-to-markdown, Wikipedia, Weather, Website status",
+  "homepage": "https://github.com/your-username/mcp-data-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/mcp-data-api"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "github",
+    "npm",
+    "hackernews",
+    "crypto",
+    "bitcoin",
+    "ethereum",
+    "gas"
+  ],
+  "license": "MIT",
+  "main": "dist/server.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/server.js",
+      "types": "./dist/server.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:http": "tsc --outDir dist-http",
+    "start": "node dist/server.js",
+    "start:http": "node dist-http/server-http.js",
+    "dev": "tsx src/server.ts",
+    "dev:http": "tsx src/server-http.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "express": "^5.2.1",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "mcp": {
+    "name": "data-api",
+    "description": "Data APIs for AI agents including GitHub trending, NPM stats, HackerNews, crypto prices, and gas prices",
+    "tools": [
+      {
+        "name": "github_trending",
+        "description": "Get GitHub trending repositories"
+      },
+      {
+        "name": "npm_stats",
+        "description": "Get NPM package download statistics"
+      },
+      {
+        "name": "hackernews_top",
+        "description": "Get Hacker News top stories"
+      },
+      {
+        "name": "crypto_price",
+        "description": "Get cryptocurrency prices"
+      },
+      {
+        "name": "crypto_gas",
+        "description": "Get Ethereum gas prices"
+      }
+    ]
+  }
+}

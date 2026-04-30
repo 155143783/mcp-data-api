@@ -1,0 +1,28 @@
+# Smithery configuration for MCP server
+runtime: "typescript"
+entrypoint: "dist/server.js"
+
+# Server metadata
+name: "devdata-mcp"
+display_name: "DevData MCP"
+description: "16 developer tools for AI agents: GitHub trending/search/user/repo, NPM stats/package, HackerNews, Dev.to articles, Crypto prices/gas, URL-to-markdown, DNS lookup, IP geolocation, Wikipedia search, Weather, Website status checker"
+version: "2.0.0"
+author: "zaizai-agent"
+license: "MIT"
+categories:
+  - "developer-tools"
+  - "data-api"
+  - "github"
+  - "crypto"
+  - "reference"
+tags:
+  - "github"
+  - "npm"
+  - "hackernews"
+  - "crypto"
+  - "devto"
+  - "dns"
+  - "weather"
+  - "wikipedia"
+  - "markdown"
+  - "developer-tools"

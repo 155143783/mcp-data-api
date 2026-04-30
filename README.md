@@ -1,114 +1,129 @@
 # MCP Data API Server
 
-MCP server providing access to popular data APIs for AI agents and applications.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 
-## Features
+> **Production-ready MCP Server with 16 powerful data tools** for AI agents. Query GitHub trending, NPM stats, HackerNews, crypto prices, weather, news, and more.
 
-- **GitHub Trending** - Get trending GitHub repositories
-- **NPM Stats** - Get NPM package download statistics
-- **HackerNews** - Get top stories from Hacker News
-- **Crypto Price** - Get cryptocurrency prices from CoinGecko
-- **Crypto Gas** - Get Ethereum gas prices
+## 🎯 Features
 
-## Installation
+### 16 Built-in Tools
+
+| Category | Tools |
+|----------|-------|
+| **GitHub** | `github_trending` - Get trending repositories by language/timeframe |
+| **NPM** | `npm_downloads` - Download stats, `npm_package_info` - Package details |
+| **Social** | `hackernews_top`, `reddit_trending` - Top posts from tech communities |
+| **Crypto** | `crypto_price` - Real-time prices, `crypto_news` - Latest news |
+| **Weather** | `weather_current`, `weather_forecast` - Current & forecast data |
+| **News** | `news_headlines` - Top headlines by category/country |
+| **Finance** | `stock_quote` - Stock prices, `forex_rate` - Currency exchange |
+| **Utilities** | `ip_lookup`, `qr_generate`, `url_shorten`, `base64_encode`, `hash_generate` |
+
+### Deployment Modes
+
+- **MCP Protocol** - Native MCP server for AI agent integration
+- **HTTP Mode** - REST API server for direct HTTP access
+- **x402 Support** - Optional micro-payment for API access (USDC on Base)
+
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
 npm install
-```
-
-## Development
-
-```bash
-npm run dev
-```
-
-## Build
-
-```bash
 npm run build
 ```
 
-## Usage
+### Configuration
 
-### Claude Desktop
-
-Add to your Claude Desktop config:
+Create `config.json`:
 
 ```json
 {
-  "mcpServers": {
-    "data-api": {
-      "command": "npx",
-      "args": ["tsx", "src/server.ts"],
-      "cwd": "/path/to/mcp-data-api"
+  "mcp": {
+    "port": 3000,
+    "auth": {
+      "type": "bearer",
+      "token": "your-api-key"
     }
+  },
+  "x402": {
+    "enabled": true,
+    "maxPrice": 1000000,
+    "paymentAddress": "0x..."
   }
 }
 ```
 
-### Using as CLI
+### Run MCP Server
 
 ```bash
+# MCP Protocol mode
 npm start
+
+# HTTP mode
+npm run http
 ```
 
-## Available Tools
+### Docker Deployment
 
-### github_trending
-Get GitHub trending repositories.
-
-Parameters:
-- `language` (optional): Programming language filter (e.g., 'typescript')
-- `since` (optional): Time range - 'daily', 'weekly', or 'monthly'
-- `limit` (optional): Number of results (default: 10)
-
-### npm_stats
-Get NPM package download statistics.
-
-Parameters:
-- `package`: NPM package name (e.g., 'lodash')
-- `period` (optional): Time period - 'last-day', 'last-week', 'last-month'
-
-### hackernews_top
-Get Hacker News top stories.
-
-Parameters:
-- `limit` (optional): Number of stories (default: 10)
-
-### crypto_price
-Get cryptocurrency price from CoinGecko.
-
-Parameters:
-- `symbol`: Cryptocurrency symbol (e.g., 'bitcoin', 'ethereum')
-- `currency` (optional): Fiat currency (default: 'usd')
-
-### crypto_gas
-Get Ethereum gas prices.
-
-No parameters required.
-
-## Deployment
-
-### Local Deployment
 ```bash
-npm run build
-npm start
+# Build
+docker build -t mcp-data-api .
+
+# Run
+docker run -p 3000:3000 -v ./config.json:/app/config.json mcp-data-api
 ```
 
-### Apify Deployment
-```bash
-# Install Apify CLI
-npm install -g apify-cli
+## 💳 x402 Micro-Payment
 
-# Login to Apify
-apify login
+The x402 protocol enables pay-per-request API access using USDC on Base chain.
 
-# Push to Apify
-apify push
+```javascript
+// Request with x402 payment
+const response = await fetch('https://api.example.com/github/trending', {
+  headers: {
+    'Authorization': 'Bearer your-key',
+    'X-402-Payment': 'amount=1000000&address=0x...&signature=...'
+  }
+});
 ```
 
-After deployment, enable Standby mode in Apify Console for persistent MCP endpoints.
+## 📖 API Documentation
 
-## License
+### MCP Tools
 
-MIT
+| Tool | Parameters | Description |
+|------|------------|-------------|
+| `github_trending` | `language`, ` timeframe` | Trending repos |
+| `crypto_price` | `symbol` | Current price |
+| `weather_current` | `city` | Current weather |
+| `news_headlines` | `category`, `country` | Top headlines |
+
+### HTTP Endpoints
+
+```
+GET /api/github/trending?language=typescript
+GET /api/crypto/price?symbol=BTC
+GET /api/weather?city=Beijing
+GET /api/news?category=technology
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+## 🔗 Links
+
+- [GitHub Repository](https://github.com/155143783/mcp-data-api)
+- [Report Issues](https://github.com/155143783/mcp-data-api/issues)

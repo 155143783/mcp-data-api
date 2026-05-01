@@ -127,3 +127,28 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - [GitHub Repository](https://github.com/155143783/mcp-data-api)
 - [Report Issues](https://github.com/155143783/mcp-data-api/issues)
+
+## 🌐 Live Demo
+
+Try the MCP Server right now:
+
+- **Health Check**: [https://compliant-milton-hybrid-hoped.trycloudflare.com/health](https://compliant-milton-hybrid-hoped.trycloudflare.com/health)
+- **MCP Endpoint**: `POST https://compliant-milton-hybrid-hoped.trycloudflare.com/mcp`
+- **Server Card**: [https://compliant-milton-hybrid-hoped.trycloudflare.com/server-card.json](https://compliant-milton-hybrid-hoped.trycloudflare.com/server-card.json)
+
+## 🧩 Coze Skills (Try Online)
+
+Related skills deployed on Coze platform:
+
+| Skill | URL |
+|-------|-----|
+| 📊 Data Visualization | [https://rvpk8hwp7f.coze.site](https://rvpk8hwp7f.coze.site) |
+| 📈 Stock Technical Analysis | [https://x9pbf5fcrh.coze.site](https://x9pbf5fcrh.coze.site) |
+| 🔍 Hotspot Research | [https://nq495w538h.coze.site](https://nq495w538h.coze.site) |
+
+## 📰 Blog
+
+Read our technical guides:
+
+- [MCP + x402: Building Paid API Services from Zero to One](https://155143783.github.io/posts/mcp-x402-paid-api.html)
+- [API Monitoring in Practice](https://155143783.github.io)
